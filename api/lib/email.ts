@@ -8,7 +8,7 @@ export async function sendVerificationEmail(email: string, token: string) {
     throw new Error("PUBLIC_API_URL is missing from environment variables!");
   }
 
-  const verificationLink = `${publicApiUrl}/verify?token=${token}`;
+  const verificationLink = `${publicApiUrl}/api/verify?token=${token}`;
 
   try {
     const { data, error } = await resend.emails.send({
